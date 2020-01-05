@@ -27,6 +27,7 @@ public class AvatarCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (!PV.IsMine)
         {
             return;
@@ -35,7 +36,8 @@ public class AvatarCombat : MonoBehaviour
         {
             PV.RPC("RPC_Shooting", RpcTarget.All);
         }
-        healthDisplay.text = avatarSetup.playerHealth.ToString();
+        //healthDisplay.text = avatarSetup.playerHealth.ToString();
+        healthDisplay.text = PhotonNetwork.GetPing().ToString();
     }
 
     [PunRPC]

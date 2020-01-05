@@ -12,6 +12,9 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
 
     public GameObject batttleButton;
     public GameObject cancelButton;
+    public GameObject optionsButton;
+    public GameObject backButton;
+    public GameObject optionsMenu;
 
     private void Awake()
     {
@@ -36,6 +39,15 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
         batttleButton.SetActive(false);
         cancelButton.SetActive(true);
+    }
+    public void OnOptionsButtonClicked()
+    {     
+        optionsMenu.SetActive(true);
+    }
+
+    public void OnBackButtonClicked()
+    {
+        optionsMenu.SetActive(false);
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
