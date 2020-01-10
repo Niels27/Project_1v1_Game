@@ -13,6 +13,8 @@ public class GameSetup : MonoBehaviour
 
     public GameObject gameOver;
 
+    public TextChatController TextChatController;
+
     public Transform[] spawnPoints;
 
     public GameObject pauseMenu;

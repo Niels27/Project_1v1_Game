@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : NetworkBehaviour
 {
     private CharacterController myCC;
+    private TextChatController textChatController;
     public float movementSpeed;
     public float rotationSpeed;
 
@@ -13,13 +15,14 @@ public class PlayerMovement : NetworkBehaviour
     void Start()
     {
         myCC = GetComponent<CharacterController>();
+        textChatController = GameSetup.GS.TextChatController;
     }
 
     // Update is called once per frame
     void Update()
     {
         // exit from update if this is not the local player
-        if (!isLocalPlayer)
+        if (!isLocalPlayer || textChatController.InUse)
         {
             return;
         }

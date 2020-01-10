@@ -21,6 +21,8 @@ public class GameLiftRoomNetworkManager : NetworkRoomManager
     [HideInInspector]
     public static string PlayerSessionId = "";
 
+    private bool _isServer = false;
+
     public class PlayerSessionInformation
     {
         public string PlayerSessionId;
@@ -37,6 +39,7 @@ public class GameLiftRoomNetworkManager : NetworkRoomManager
     {
         if (isHeadless && startOnHeadless)
         {
+            _isServer = true;
             StartServer();
         }
     }
@@ -73,9 +76,12 @@ public class GameLiftRoomNetworkManager : NetworkRoomManager
 
     public override void OnApplicationQuit()
     {
-        GameLiftServerAPI.ProcessEnding();
-        GameLiftServerAPI.Destroy();
-
+        if (_isServer)
+        {
+            GameLiftServerAPI.ProcessEnding();
+            GameLiftServerAPI.Destroy();
+        }
+        
         base.OnApplicationQuit();
     }
 
@@ -85,6 +91,7 @@ public class GameLiftRoomNetworkManager : NetworkRoomManager
         base.OnRoomStartServer();
 
         NetworkServer.RegisterHandler<CreateCharacterMessage>(OnCreateCharacter);
+        NetworkServer.RegisterHandler<TextChatController.ChatMessage>(OnChatMessage);
 
         var initSDKOutcome = GameLiftServerAPI.InitSDK();
         if (initSDKOutcome.Success)
@@ -177,5 +184,10 @@ public class GameLiftRoomNetworkManager : NetworkRoomManager
         playerSetup.CharacterValue = msg.ChosenCharacter;
 
         NetworkServer.AddPlayerForConnection(conn, playerObject);
+    }
+
+    public void OnChatMessage(NetworkConnection conn, TextChatController.ChatMessage msg)
+    {
+        NetworkServer.SendToAll(msg);
     }
 }
