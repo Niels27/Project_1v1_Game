@@ -47,4 +47,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-Assets/TerrainTexturesPackFree
+Assets/TerrainTexturesPackFree*
+Assets/Materials
