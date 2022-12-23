@@ -42,6 +42,6 @@ public class AvatarSetup : NetworkBehaviour
 
     public void SetCharacter(int characterValue)
     {
-        Character = Instantiate(PlayerInfo.PI.allCharacters[characterValue], transform.position, transform.rotation, transform);
+        //Character = Instantiate(PlayerInfo.PI.allCharacters[characterValue], transform.position, transform.rotation, transform);
     }
 }

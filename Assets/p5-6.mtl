@@ -1,0 +1,9 @@
+newmtl p5-8
+Kd 1 1 1
+d 1
+
+newmtl p5
+map_Kd p5.png
+Kd 1 1 1
+d 1
+

@@ -15,6 +15,8 @@ using Random = UnityEngine.Random;
 
 public class GameLiftRoomNetworkManager : NetworkRoomManager
 {
+    public GameObject MainCamera;
+
     [Header("AWS GameLift")]
     public string GameServiceUrl;
 
@@ -169,6 +171,7 @@ public class GameLiftRoomNetworkManager : NetworkRoomManager
 
             clientObject.GetComponent<PauseMenu>().pauseMenu = GameSetup.GS.pauseMenu;
             clientObject.GetComponent<AvatarCombat>().HealthDisplay = GameSetup.GS.healthDisplay;
+            MainCamera.SetActive(!MainCamera.activeSelf);
         }
     }
 

@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Multiplayer.unity
     guid: bf502df1aff34d54b95cf666b5d0898d
+  - enabled: 1
+    path: Assets/city.unity
+    guid: 0aeddce1366f04840b72c9632290d172
+  - enabled: 1
+    path: Assets/desert ruins.unity
+    guid: 4cfb441428bd93245999ca3efdda1eff
+  - enabled: 1
+    path: Assets/floating islands.unity
+    guid: e081c7ea75bee7e4f9f52f7a62c78526
   m_configObjects: {}

@@ -2183,25 +2183,26 @@ MonoBehaviour:
   serverTickRate: 30
   showDebugMessages: 0
   offlineScene: Main Menu
-  onlineScene: Multiplayer
+  onlineScene: floating islands
   transport: {fileID: 1885399951}
   networkAddress: localhost
   maxConnections: 2
   authenticator: {fileID: 1885399952}
-  playerPrefab: {fileID: 3718851286532460677, guid: 78a6c4c622e20c946bf4e6ad9b238e55,
+  playerPrefab: {fileID: 8868665235733179211, guid: 3185c564b5adc174db09ff5175406a62,
     type: 3}
   autoCreatePlayer: 0
   playerSpawnMethod: 0
   spawnPrefabs:
-  - {fileID: 3718851286532460677, guid: 78a6c4c622e20c946bf4e6ad9b238e55, type: 3}
+  - {fileID: 8868665235733179211, guid: 3185c564b5adc174db09ff5175406a62, type: 3}
   showRoomGUI: 1
   minPlayers: 2
-  roomPlayerPrefab: {fileID: 4172699755109377636, guid: 78a6c4c622e20c946bf4e6ad9b238e55,
+  roomPlayerPrefab: {fileID: 1728186946209893620, guid: 3185c564b5adc174db09ff5175406a62,
     type: 3}
-  RoomScene: Multiplayer
-  GameplayScene: Multiplayer
+  RoomScene: floating islands
+  GameplayScene: floating islands
   roomSlots: []
   allPlayersReady: 0
+  MainCamera: {fileID: 1148533665}
   GameServiceUrl: http://localhost:1080
 --- !u!1 &1931172595
 GameObject:
